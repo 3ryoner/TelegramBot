@@ -10,10 +10,10 @@ from scheduler import scheduler, setup_schedule_notifications
 
 # Starting the bot
 async def main():
-    bot = Bot(TOKEN)
+    bot = Bot("7187636386:AAF251aM6bl5pjzZQqFJbblJATcEFL_rHHY")
     dp = Dispatcher()
     # init routers
-    dp.include_routers(menu_router, )
+    dp.include_routers(menu_router)
     # init repo
     repo = SubscriptionNotificationsRepo()
     dp['repo'] = repo

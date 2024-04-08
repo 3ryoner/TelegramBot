@@ -26,7 +26,9 @@ def setup_schedule_notifications(bot: Bot, repo: SubscriptionNotificationsRepo):
     }
     for day_of_week in day_of_week_subjects:
         for subject, triger_kwargs in day_of_week_subjects[day_of_week]:
-            scheduler.add_job(send_notifications, 'cron', args=(f'Hey ! You will have {subject} in 5 minutes !!!', ), kwargs=dict(bot=bot, repo=repo), day_of_week=day_of_week, **triger_kwargs)
+            scheduler.add_job(send_notifications, 'cron', args=(f'Hey ! You will have {subject} in 5 minutes !!!',),
+                              kwargs=dict(bot=bot, repo=repo), day_of_week=day_of_week, **triger_kwargs)
+
 
 async def send_notifications(text: str, bot: Bot, repo: SubscriptionNotificationsRepo):
     subscriptions_ids = await repo.get_subscriptions()

@@ -49,13 +49,20 @@ async def week_schedule_button(message: types.Message):
 
 
 # func /turn_on
+@menu_router.message(Command("turn_on"))
 @menu_router.message(F.text == "I want to get notifications 🔔")
 async def subscription_notifications(msg: Message, repo: SubscriptionNotificationsRepo):
     await repo.add_subscription(msg.from_user.id)
     await msg.answer("Notifications are enabled 🔔", reply_markup=main_kb())
 
 
-@menu_router.message(F.text == "Disable notifications 🔕")
-async def subscription_notifications(msg: Message, repo: SubscriptionNotificationsRepo):
-    await repo.remove_subscription(msg.from_user.id)
-    await msg.answer("Notifications are disabled 🔕", reply_markup=main_kb())
+@menu_router.message(Command("support"))
+@menu_router.message(F.text == "Support the author 💵😊")
+async def support_button(message: types.Message):
+    await message.answer(text="Bot's IBAN: SK8511000000002931788181\n"
+                              "Bot's PrivatBank: 5457082253067172\n"
+                              "Bot's MonoBank: 4441111132619622",
+                         reply_markup=main_kb())
+
+
+

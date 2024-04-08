@@ -20,7 +20,6 @@ def main_kb():
         KeyboardButton(text="Daily schedule ‼️"),
         KeyboardButton(text="Dates of tests and exams ☠️"),
         KeyboardButton(text="I want to get notifications 🔔"),
-        KeyboardButton(text="Disable notifications 🔕"),
         KeyboardButton(text="Support the author 💵😊")
     )
-    return keyboard.adjust(2, 1, 2, 1).as_markup(resize_keyboard=True, one_time_keyboard=True)
+    return keyboard.adjust(2, 1, 2).as_markup(resize_keyboard=True, one_time_keyboard=True)
