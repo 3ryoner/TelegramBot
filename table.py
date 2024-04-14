@@ -70,8 +70,26 @@ sunday = (
 
 tests_exams = (
     f"Tests and exams :"
-    f"\n\n(7. týždeň)  ZSI  --->  Test"
-    f"\n(9. týždeň)  PPI  --->  Pisomka (10 bodov)"
-    f"\n(9. týždeň)  Jazyk 2  --->  Test (v piatok 12.04.2024)"
-    f"\n(10. týždeň)  Fizika 1  --->  Pisomka (10 bodov)"
+    f"\n\n(11. týždeň)  PPI  --->  Pisomka (10 bodov)"
+    f"\n(11. týždeň)  Fizika 1  --->  Pisomka (20 bodov)"
+    f"\n(14. týždeň) Matematika 2 ---> Započet (50 bodov)"
 )
+
+day_of_week_subjects = {
+        'tue': [
+            ("PPI (cvicenie)", dict(hour=9, minute=5)),
+            ("ZSI (prednaska)", dict(hour=10, minute=45)),
+            ("Programovanie (cvicenie)", dict(hour=13, minute=25)),
+        ],
+        'wed': [
+            ("Programovanie (prednaska)", dict(hour=8, minute=10)),
+            ("Matematika 2 (prednaska)", dict(hour=9, minute=50)),
+            ("Fyzika I (prednáška)", dict(hour=12, minute=15)),
+            ("PPI (prednaska)", dict(hour=15, minute=5)),
+        ],
+        'thu': [
+            ("Matematika 2 (cvicenie)", dict(hour=8, minute=10)),
+            ("Fyzika 1 (cvicenie)", dict(hour=9, minute=50)),
+            ("ZSI (cvicenie)", dict(hour=13, minute=25)),
+        ]
+    }

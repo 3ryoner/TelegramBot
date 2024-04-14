@@ -20,6 +20,7 @@ async def main():
     # setup and start scheduler
     setup_schedule_notifications(bot, repo)
     scheduler.start()
+    print("Scheduler started")
     # start polling
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
