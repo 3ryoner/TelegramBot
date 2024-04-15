@@ -1,8 +1,11 @@
+from typing import List
+
+
 class SubscriptionNotificationsRepo:
     def __init__(self):
-        self.subscriptions: list[int] = []
+        self.subscriptions: List[int] = []
 
-    async def get_subscriptions(self) -> list[int]:
+    async def get_subscriptions(self) -> List[int]:
         return self.subscriptions
 
     async def add_subscription(self, chat_id: int):
